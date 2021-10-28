@@ -27,5 +27,7 @@ public class P1003 {
 
         for(int i = 0; i < n.length; i++)
             System.out.println(dp[n[i]][0]+" "+dp[n[i]][1]);
+
+        br.close();
     }
 }
