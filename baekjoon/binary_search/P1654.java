@@ -1,3 +1,5 @@
+package baekjoon.binary_search;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
@@ -33,6 +35,8 @@ public class P1654 {
 			if(cuts >= cnt) left = mid+1;
 			else right = mid-1;	
 		}
+
 		System.out.println(right);
+		br.close();
 	}
 }
