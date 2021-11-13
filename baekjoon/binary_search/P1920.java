@@ -1,3 +1,5 @@
+package baekjoon.binary_search;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
@@ -9,10 +11,10 @@ public class P1920{
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
 		//1. input stream
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		int[] arr = new int[Integer.parseInt(in.readLine())];
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int[] arr = new int[Integer.parseInt(br.readLine())];
 		
-		String nums = in.readLine();
+		String nums = br.readLine();
 		StringTokenizer st = new StringTokenizer(nums);
 		
 		for(int i=0; i<arr.length; i++)
@@ -21,8 +23,8 @@ public class P1920{
 		//2. sorting
 		Arrays.sort(arr);
 		
-		int[] output = new int[Integer.parseInt(in.readLine())];
-		st = new StringTokenizer(in.readLine());
+		int[] output = new int[Integer.parseInt(br.readLine())];
+		st = new StringTokenizer(br.readLine());
 		
 		for(int i=0; i<output.length; i++)
 			output[i] = bs(arr, Integer.parseInt(st.nextToken()));
@@ -30,6 +32,8 @@ public class P1920{
 		//4. print output
 		for(int i=0; i< output.length; i++)
 			System.out.println(output[i]);
+
+		br.close();
 	}
 	
 	//3. output stream using binary search
