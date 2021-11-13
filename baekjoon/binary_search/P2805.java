@@ -1,3 +1,5 @@
+package baekjoon.binary_search;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -10,7 +12,6 @@ public class P2805 {
 		
 		//1. input stream
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
 		int[] arr = new int[Integer.parseInt(st.nextToken())];
@@ -38,6 +39,8 @@ public class P2805 {
 			if(m <= rest) left = mid+1;
 			else right = mid-1;
 		}
+
 		System.out.println(right);
+		br.close();
 	}
 }
