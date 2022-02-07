@@ -9,7 +9,6 @@ public class P15650 {
 
     static int N, M;
     static int[] node;
-    static boolean[] visited;
     static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException{
@@ -23,7 +22,6 @@ public class P15650 {
         StringTokenizer st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken()); M = Integer.parseInt(st.nextToken());
         node = new int[M + 1];
-        visited = new boolean[N + 1];
 
         br.close();
     }
@@ -40,15 +38,9 @@ public class P15650 {
             return;
         }
 
-        int start = node[depth - 1] + 1;
-        for(int n = start; n <= N; n++){
-            if(visited[n])
-                continue;
+        for(int n = node[depth - 1] + 1; n <= N; n++){
             node[depth] = n;
-            visited[n] = true;
-
             dfs(depth + 1);
-            visited[n] = false;
         }
     }
 
