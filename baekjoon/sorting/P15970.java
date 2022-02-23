@@ -22,8 +22,7 @@ public class P15970 {
         }
     }
 
-    static int N;
-    static long SUM;
+    static int N, SUM;
     static Pair[] pairs;
 
     public static void main(String[] args) throws IOException{
