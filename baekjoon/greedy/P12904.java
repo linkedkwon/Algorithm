@@ -8,19 +8,18 @@ public class P12904 {
 
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-        String s = br.readLine(), t = br.readLine();
+        StringBuilder sb = new StringBuilder(br.readLine());
+        StringBuilder tb = new StringBuilder(br.readLine());
 
-        while(s.length() < t.length()){
-            if(t.endsWith("A"))
-                t = t.substring(0, t.length() - 1);
-            else if(t.endsWith("B")){
-                t = t.substring(0, t.length() - 1);
-                t = sb.append(t).reverse().toString();
-            }
+        while(tb.length() > sb.length()){
+            boolean endsWithB = tb.charAt(tb.length() - 1) == 'B' ? true : false;
+            tb.delete(tb.length() - 1, tb.length());
+            if(endsWithB)
+                tb.reverse();
         }
 
-        System.out.println(s.equals(t) ? "1" : "0");
+        System.out.println(sb.toString().equals(tb.toString()) ? "1" : "0");
         br.close();
     }
+
 }
