@@ -12,12 +12,12 @@ public class P10819 {
     static boolean[] visited;
 
     public static void main(String[] args) throws IOException{
-        readIn();
+        preProcess();
         dfs(0, new int[N]);
         System.out.println(MAX);
     }
 
-    static void readIn() throws IOException{
+    static void preProcess() throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
         arr = new int[N]; visited = new boolean[N];
