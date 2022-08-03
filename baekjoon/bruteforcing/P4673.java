@@ -7,11 +7,11 @@ public class P4673 {
     static boolean[] arr = new boolean[10001];
 
     public static void main(String[] args) throws IOException{
-        bruteforce();
+        process();
         writeOut();
     }
 
-    static void bruteforce(){
+    static void process(){
         for(int i = 1; i < 10001; i++){
             int dx = i, n = i;
             while(dx > 0){
