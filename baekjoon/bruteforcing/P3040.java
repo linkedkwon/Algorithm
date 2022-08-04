@@ -10,11 +10,11 @@ public class P3040 {
     static int[] arr = new int[9];
 
     public static void main(String[] args) throws IOException{
-        readIn();
-        loop();
+        preProcess();
+        process();
     }
 
-    static void readIn() throws IOException{
+    static void preProcess() throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         for(int i = 0; i < 9; i++){
             arr[i] = Integer.parseInt(br.readLine());
@@ -23,7 +23,7 @@ public class P3040 {
         br.close();
     }
 
-    static void writeOut(int n1, int n2){
+    static void postProcess(int n1, int n2){
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < 9; i++) {
             if(arr[i] == n1 || arr[i] == n2)
@@ -34,14 +34,14 @@ public class P3040 {
         System.exit(0);
     }
 
-    static void loop(){
+    static void process(){
         for(int i = 0; i < 9; i++){
             for(int j = i + 1; j < 9; j++){
                 int dx = sum - arr[i] - arr[j];
                 if(dx > 100)
                     continue;
                 else if(dx == 100)
-                    writeOut(arr[i], arr[j]);
+                    postProcess(arr[i], arr[j]);
             }
         }
     }
